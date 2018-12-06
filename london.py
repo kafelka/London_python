@@ -4,21 +4,44 @@ Created on Thu Dec  6 15:37:03 2018
 
 @author: nahas
 """
+#def yes_no_london():
+#
+#    if response == "n":
+#        print("Oh... You should visit it!")
+#    elif response == "y":
+#        print("you answered yes")
+#    #     activity_selection = input("Imagine you have a day for yourself in London. What sort of activity would you be interested in? Type e for entertainment, f for food, c for cultural or s for shopping")
+#    #     if activity_selection = "e":
+#    #         
+#             
+#    else: 
+#        print("Wrong answer. Go back to your city :P")
+        
+    
 
-
-def yes_no_london():
+def yes_no_london(response):
 
     if response == "n":
         print("Oh... You should visit it!")
+        return True
     elif response == "y":
         print("you answered yes")
-    #     activity_selection = input("Imagine you have a day for yourself in London. What sort of activity would you be interested in? Type e for entertainment, f for food, c for cultural or s for shopping")
-    #     if activity_selection = "e":
-    #         
-             
+        return True
     else: 
-        print("Wrong answer. Go back to your city :P")
+        return False
         
+name = input("What's your name? ")
+print("Hello {}!".format(name.title()))
+
+response = input("Do you live in London? y/n ")
+
+if yes_no_london(response):
+    print('do next')
+else:
+    yes_no_london(response)
+    print("Wrong answer. Go back to your city :P")
+    
+    
     
 #class Activity():
 #    def __init__(self, budget=0, ):
@@ -62,28 +85,3 @@ def yes_no_london():
 #            print("Your options are: AA, BB or CC")
 
 #--------------------------------
-def yes_no_london(response):
-
-    if response == "n":
-        print("Oh... You should visit it!")
-        return True
-    elif response == "y":
-        print("you answered yes")
-        return True
-    #     activity_selection = input("Imagine you have a day for yourself in London. What sort of activity would you be interested in? Type e for entertainment, f for food, c for cultural or s for shopping")
-    #     if activity_selection = "e":
-    #         
-             
-    else: 
-        print("Wrong answer. Go back to your city :P")
-        return False
-        
-name = input("What's your name? ")
-print("Hello {}!".format(name.title()))
-
-response = input("Do you live in London? y/n ")
-
-if yes_no_london(response):
-    print('do next')
-else:
-    yes_no_london(response)
