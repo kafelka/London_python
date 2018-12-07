@@ -2,7 +2,7 @@
 """
 Created on Thu Dec  6 15:37:03 2018
 
-@author: nahas
+@author: sarika, roxy & maggie
 """
 import time
 
@@ -14,7 +14,6 @@ def ask_london():
     elif response.lower() == "n":
         print("Sorry to hear that... Maybe you should visit your capital city from time to time? ;-)")
         return False
-        exit() #how to exit the script??
     else:
         print("Please answer by typing y or n.")
         return ask_london()
@@ -133,23 +132,24 @@ print("Hello {}!".format(name.title()))
 
 
 
-is_london = ask_london()
-activity_type = ask_activity()
-user_budget = ask_budget()
-
-if activity_type == "e":
-    bye = Entertainment(user_budget)
-    bye.enjoy()
-
-if activity_type == "s":
-    bye = Shopping(user_budget)
-    bye.enjoy()
+if ask_london(): 
+    activity_type = ask_activity()
+    user_budget = ask_budget()
     
-if activity_type == "c":
-    bye = Cultural(user_budget)
-    bye.enjoy()
+    if activity_type == "e":
+        bye = Entertainment(user_budget)
+        bye.enjoy()
     
-if activity_type == "f":
-    bye = Food(user_budget)
-    bye.enjoy()
-    
+    if activity_type == "s":
+        bye = Shopping(user_budget)
+        bye.enjoy()
+        
+    if activity_type == "c":
+        bye = Cultural(user_budget)
+        bye.enjoy()
+        
+    if activity_type == "f":
+        bye = Food(user_budget)
+        bye.enjoy()
+else:
+    print("Thank you! Bye!")
