@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Fri Dec  7 13:46:10 2018
+
+@author: nahas
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Thu Dec  6 15:37:03 2018
 
 @author: nahas
@@ -18,11 +25,7 @@ def ask_london():
     else:
         print("Please answer by typing y or n.")
         return ask_london()
-    
-#e = "entertainment" 
-#s = "shopping"
-#c = "cultural"
-#f = "food"
+
     
 def ask_activity():
     time.sleep(1)
@@ -56,13 +59,6 @@ Type first letter:
         print("Type the first letter of the activity, please.")
         return ask_activity()
         
-
-#    if activity.lower() == "e" or activity.lower() == "s" or activity.lower() == "c" or activity.lower() == "f":
-#        print("Good choice! You selected: {}".format(activity))
-#        return activity.lower()
-#    else:
-#        print("Type the first letter of the activity, please.")
-#        return ask_activity()
  
 def ask_budget():
     
@@ -128,28 +124,3 @@ class Shopping(Activity):
     def enjoy(self):
         print("Enjoy your shopping spree!")
 
-name = input("What's your name? ")
-print("Hello {}!".format(name.title()))
-
-
-
-is_london = ask_london()
-activity_type = ask_activity()
-user_budget = ask_budget()
-
-if activity_type == "e":
-    bye = Entertainment(user_budget)
-    bye.enjoy()
-
-if activity_type == "s":
-    bye = Shopping(user_budget)
-    bye.enjoy()
-    
-if activity_type == "c":
-    bye = Cultural(user_budget)
-    bye.enjoy()
-    
-if activity_type == "f":
-    bye = Food(user_budget)
-    bye.enjoy()
-    
