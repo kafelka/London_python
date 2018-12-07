@@ -16,6 +16,24 @@ def ask_london():
         print("Please answer by typing y or n.")
         return ask_london()
     
+    
+def ask_activity():
+    activity = input("""
+ What sort of activity would you be interested in?
+ Type first letter:
+    * e for entertainment
+    * s for shopping
+    * c for cultural
+    * f for food \n """)
+        
+        
+    if activity.lower() == "e" or activity.lower() == "s" or activity.lower() == "c" or activity.lower() == "f":
+        print("Good choice! You selected: {}".format(activity))
+        return activity.lower()
+    else:
+        print("Type first letter of the activity.")
+        return ask_activity()
+    
 #class Activity():
 #    def __init__(self, budget=0, ):
 #        self.budget = budget
@@ -63,5 +81,5 @@ name = input("What's your name? ")
 print("Hello {}!".format(name.title()))
 
 is_london = ask_london()
-
+activity_type = ask_activity()
 
