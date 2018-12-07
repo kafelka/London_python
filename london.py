@@ -4,6 +4,8 @@ Created on Thu Dec  6 15:37:03 2018
 
 @author: nahas
 """
+import time
+
 def ask_london():
     response = input("Do you live in London? y/n ")
     if response.lower() == "y":
@@ -16,17 +18,34 @@ def ask_london():
         print("Please answer by typing y or n.")
         return ask_london()
     
+#e = "entertainment" 
+#s = "shopping"
+#c = "cultural"
+#f = "food"
     
 def ask_activity():
+    time.sleep(1)
     activity = input("""
- What sort of activity would you be interested in?
- Type first letter:
-    * e for entertainment
-    * s for shopping
-    * c for cultural
-    * f for food \n """)
+What sort of activity would you be interested in?
+Type first letter:
+   * e for entertainment
+   * s for shopping
+   * c for cultural
+   * f for food \n """)
         
+#    if activity.lower() == "e":
+#        print("Good choice! You selected: {}".format(e))
+#    elif activity.lower() == "s":
+#        print("Good choice! You selected: {}".format(s))
+#    elif activity.lower() == "c":
+#        print("Good choice! You selected: {}".format(c))
+#    elif activity.lower() == "f":
+#        print("Good choice! You selected: {}".format(f))
+#    else:
+#        print("Type the first letter of the activity, please.")
+#        return ask_activity()
         
+
     if activity.lower() == "e" or activity.lower() == "s" or activity.lower() == "c" or activity.lower() == "f":
         print("Good choice! You selected: {}".format(activity))
         return activity.lower()
@@ -46,9 +65,10 @@ def ask_budget():
     
     
 class Activity():
-    def __init__(self, budget=0, ):
+    def __init__(self, budget=0):
         self.budget = budget
-        
+    
+ 
         
 class Entertainment(Activity):
     def __init__(self, budget=0):
@@ -59,6 +79,9 @@ class Entertainment(Activity):
         else:
             print("Your options are: a night time dinner cruise on Thames, concerts at the O2 or a spa at a 5* hotel.")
             
+    def enjoy(self):
+        print("Enjoy your time!")
+        
 class Food(Activity):
      def __init__(self, budget=0):
         if budget <= 25:
@@ -68,6 +91,9 @@ class Food(Activity):
         else:
             print("Your options are: Gordon Ramsey's, dinner by Heston Blumenthal, Benares (indian).")
             
+     def enjoy(self):
+        print("Enjoy your food!")
+            
 class Cultural(Activity):
     def __init__(self, budget=0):
         if budget <= 25:
@@ -76,6 +102,9 @@ class Cultural(Activity):
             print("Your options are: theatres and musicals e.g.: The Book of Mormon, Kinky Boots, Chicago, Wicked, Hamilton.")
         else:
             print("Your options are: helicopter tour, ballet e.g. The Nutcracker, Swan Lake, opera: Carmen, La traviata,")
+         
+    def enjoy(self):
+        print("Enjoy your cultural activity!")
             
 class Shopping(Activity):
     def __init__(self, budget=0):
@@ -86,7 +115,8 @@ class Shopping(Activity):
         else:
             print("Your options are: Harrods, Harvey Nichols, Selfridges.")
 
-
+    def enjoy(self):
+        print("Enjoy your shopping spree!")
 
 name = input("What's your name? ")
 print("Hello {}!".format(name.title()))
@@ -96,11 +126,18 @@ activity_type = ask_activity()
 user_budget = ask_budget()
 
 if activity_type == "e":
-    x = Entertainment(user_budget)
-    x.entertainment_costam()
+    bye = Entertainment(user_budget)
+    bye.enjoy()
+
 if activity_type == "s":
-    Shopping(user_budget)
+    bye = Shopping(user_budget)
+    bye.enjoy()
+    
 if activity_type == "c":
-    Cultural(user_budget)
+    bye = Cultural(user_budget)
+    bye.enjoy()
+    
 if activity_type == "f":
-    Food(user_budget)
+    bye = Food(user_budget)
+    bye.enjoy()
+    
