@@ -4,44 +4,17 @@ Created on Thu Dec  6 15:37:03 2018
 
 @author: nahas
 """
-#def yes_no_london():
-#
-#    if response == "n":
-#        print("Oh... You should visit it!")
-#    elif response == "y":
-#        print("you answered yes")
-#    #     activity_selection = input("Imagine you have a day for yourself in London. What sort of activity would you be interested in? Type e for entertainment, f for food, c for cultural or s for shopping")
-#    #     if activity_selection = "e":
-#    #         
-#             
-#    else: 
-#        print("Wrong answer. Go back to your city :P")
-        
-    
-
-def yes_no_london(response):
-
-    if response == "n":
-        print("Oh... You should visit it!")
+def ask_london():
+    response = input("Do you live in London? y/n ")
+    if response.lower() == "y":
+        print("Nice!")
         return True
-    elif response == "y":
-        print("you answered yes")
-        return True
-    else: 
+    elif response.lower() == "n":
+        print("Oh, maybe you should come and visit it?")
         return False
-        
-name = input("What's your name? ")
-print("Hello {}!".format(name.title()))
-
-response = input("Do you live in London? y/n ")
-
-if yes_no_london(response):
-    print('do next')
-else:
-    yes_no_london(response)
-    print("Wrong answer. Go back to your city :P")
-    
-    
+    else:
+        print("Please answer by typing y or n.")
+        return ask_london()
     
 #class Activity():
 #    def __init__(self, budget=0, ):
@@ -85,3 +58,10 @@ else:
 #            print("Your options are: AA, BB or CC")
 
 #--------------------------------
+
+name = input("What's your name? ")
+print("Hello {}!".format(name.title()))
+
+is_london = ask_london()
+
+
