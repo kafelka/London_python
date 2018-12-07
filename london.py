@@ -61,7 +61,7 @@ class Entertainment(Activity):
             
 class Food(Activity):
      def __init__(self, budget=0):
-        if budget < 25:
+        if budget <= 25:
             print("Your options are: Nandos, Franco Manca, Tibits, Wagamama or Kerb Food Market in Camden.")
         elif (budget > 25 and budget < 75):
             print("Your options are: Sketch, Tombo (japanese), Dishoom (indian), Jamie Oliver's, Polpo.")
@@ -70,21 +70,21 @@ class Food(Activity):
             
 class Cultural(Activity):
     def __init__(self, budget=0):
-        if budget < 25:
+        if budget <= 25:
             print("Your options are: British Museum, the National Gallery, Tate Modern, Natural History Museum, Victoria and Albert Museum, Science Museum.")
         elif (budget > 25 and budget < 75):
             print("Your options are: theatres and musicals e.g.: The Book of Mormon, Kinky Boots, Chicago, Wicked, Hamilton.")
         else:
             print("Your options are: helicopter tour, ballet e.g. The Nutcracker, Swan Lake, opera: Carmen, La traviata,")
             
-#class Shopping(Activity):
-#        def __init__(self, budget=0):
-#        if budget < 25:
-#            print("Your options are: Primark, H&M, New Look.")
-#        elif (budget > 25 and budget < 75):
-#            print("Your options are: COS, Next, M&S, Debenhams, John Lewis.")
-#        else:
-#            print("Your options are: Harrods, Harvey Nichols, Selfridges.")
+class Shopping(Activity):
+    def __init__(self, budget=0):
+        if budget <= 25:
+            print("Your options are: Primark, H&M, New Look.")
+        elif (budget > 25 and budget < 75):
+            print("Your options are: COS, Next, M&S, Debenhams, John Lewis.")
+        else:
+            print("Your options are: Harrods, Harvey Nichols, Selfridges.")
 
 
 
@@ -95,3 +95,12 @@ is_london = ask_london()
 activity_type = ask_activity()
 user_budget = ask_budget()
 
+if activity_type == "e":
+    x = Entertainment(user_budget)
+    x.entertainment_costam()
+if activity_type == "s":
+    Shopping(user_budget)
+if activity_type == "c":
+    Cultural(user_budget)
+if activity_type == "f":
+    Food(user_budget)
