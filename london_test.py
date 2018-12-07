@@ -20,15 +20,15 @@ if ask_london():
         bye = Entertainment(user_budget)
         bye.enjoy()
     
-    if activity_type == "s":
+    elif activity_type == "s":
         bye = Shopping(user_budget)
         bye.enjoy()
         
-    if activity_type == "c":
+    elif activity_type == "c":
         bye = Cultural(user_budget)
         bye.enjoy()
         
-    if activity_type == "f":
+    else: #activity_type == "f":
         bye = Food(user_budget)
         bye.enjoy()
 else:

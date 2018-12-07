@@ -45,13 +45,13 @@ Type first letter:
     if activity.lower() == "e":
         print("Good choice! You selected: {}".format(e))
         return activity.lower()
-    if activity.lower() =="s":
+    elif activity.lower() =="s":
         print("Good choice! You selected: {}".format(s))
         return activity.lower()
-    if  activity.lower() == "c":
+    elif  activity.lower() == "c":
         print("Good choice! You selected: {}".format(c))
         return activity.lower()
-    if  activity.lower() == "f":
+    elif  activity.lower() == "f":
         print("Good choice! You selected: {}".format(f))
         return activity.lower()
     else:
