@@ -33,25 +33,35 @@ Type first letter:
    * c for cultural
    * f for food \n """)
         
-#    if activity.lower() == "e":
-#        print("Good choice! You selected: {}".format(e))
-#    elif activity.lower() == "s":
-#        print("Good choice! You selected: {}".format(s))
-#    elif activity.lower() == "c":
-#        print("Good choice! You selected: {}".format(c))
-#    elif activity.lower() == "f":
-#        print("Good choice! You selected: {}".format(f))
-#    else:
-#        print("Type the first letter of the activity, please.")
-#        return ask_activity()
-        
+    e="entertainment"
+    s="shopping"
+    c="cultural activity"
+    f="food"
 
-    if activity.lower() == "e" or activity.lower() == "s" or activity.lower() == "c" or activity.lower() == "f":
-        print("Good choice! You selected: {}".format(activity))
+        
+    if activity.lower() == "e":
+        print("Good choice! You selected: {}".format(e))
+        return activity.lower()
+    if activity.lower() =="s":
+        print("Good choice! You selected: {}".format(s))
+        return activity.lower()
+    if  activity.lower() == "c":
+        print("Good choice! You selected: {}".format(c))
+        return activity.lower()
+    if  activity.lower() == "f":
+        print("Good choice! You selected: {}".format(f))
         return activity.lower()
     else:
         print("Type the first letter of the activity, please.")
         return ask_activity()
+        
+
+#    if activity.lower() == "e" or activity.lower() == "s" or activity.lower() == "c" or activity.lower() == "f":
+#        print("Good choice! You selected: {}".format(activity))
+#        return activity.lower()
+#    else:
+#        print("Type the first letter of the activity, please.")
+#        return ask_activity()
  
 def ask_budget():
     
@@ -69,7 +79,6 @@ class Activity():
         self.budget = budget
     
  
-        
 class Entertainment(Activity):
     def __init__(self, budget=0):
         if budget < 25:
@@ -120,6 +129,8 @@ class Shopping(Activity):
 
 name = input("What's your name? ")
 print("Hello {}!".format(name.title()))
+
+
 
 is_london = ask_london()
 activity_type = ask_activity()
