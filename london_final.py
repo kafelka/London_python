@@ -11,6 +11,8 @@ Created on Fri Dec  7 11:31:07 2018
 Created on Thu Dec  6 15:37:03 2018
 @author: nahas
 """
+
+
 def ask_london():
     response = input("Do you live in London? y/n ")
     if response.lower() == "y":
@@ -34,8 +36,17 @@ def ask_activity():
     * f for food \n """)
         
         
-    if activity.lower() == "e" or activity.lower() == "s" or activity.lower() == "c" or activity.lower() == "f":
-        print("Good choice! You selected: {}".format(activity))
+    if activity.lower() == "e":
+        print("Good choice! You selected: {}".format(e))
+        return activity.lower()
+    if activity.lower() =="s":
+        print("Good choice! You selected: {}".format(s))
+        return activity.lower()
+    if  activity.lower() == "c":
+        print("Good choice! You selected: {}".format(c))
+        return activity.lower()
+    if  activity.lower() == "f":
+        print("Good choice! You selected: {}".format(f))
         return activity.lower()
     else:
         print("Type the first letter of the activity, please.")
@@ -95,8 +106,11 @@ class Shopping(Activity):
 
 #def entertainment_costam(self):
 #         print("hi is this working")
-         
-
+     
+e="entertainment"
+s="shopping"
+c="cultural activity"
+f="food"
 name = input("What's your name? ")
 print("Hello {}!".format(name.title()))
 
